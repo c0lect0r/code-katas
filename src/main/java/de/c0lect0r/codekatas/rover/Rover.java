@@ -1,16 +1,15 @@
 package de.c0lect0r.codekatas.rover;
 
-public class Rover {
+public interface Rover {
 
-	 private Direction currentDirection;
+	Direction getCurrentDirection();
 
-	public Direction getCurrentDirection() {
-		return currentDirection;
-	}
+	void setDirection(Direction direction);
 
-	void setDirection(Direction direction) {
-		this.currentDirection = direction;
-		
-	}
+	Coordinates getCurrentCoordinates();
+
+	void setCoordinates(Coordinates coordinates);
+
+	void drive(Move move);
 
 }

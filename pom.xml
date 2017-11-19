@@ -3,4 +3,11 @@
   <groupId>de.c0lect0r</groupId>
   <artifactId>code-kata</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.assertj</groupId>
+  		<artifactId>assertj-core</artifactId>
+  		<version>3.8.0</version>
+  	</dependency>
+  </dependencies>
 </project>
