@@ -64,7 +64,5 @@ public final class Coordinates {
 			return false;
 		}
 		return true;
-	} 
-
-
+	}
 }

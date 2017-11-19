@@ -34,10 +34,10 @@ public class RoverTest {
 		move.setDirection(Direction.NORTH);
 		move.setDistance(1);
 		coordinates = new Coordinates(1, 2);
+		rover.setCoordinates(new Coordinates(1, 1));
 		
 		//when
 		rover.drive(move);
-		rover.setCoordinates(new Coordinates(1, 1));
 		
 		//then
 		Assert.assertEquals(coordinates, rover.getCurrentCoordinates());
