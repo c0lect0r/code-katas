@@ -39,6 +39,9 @@ public class RoverImpl implements Rover {
 				break;
 			case WEST:
 				driveToNorthDirectionForDistance(move.getDistance());
+				break;
+			case EAST:
+				driveToEastDirectionForDistance(move.getDistance());
 			default:
 				break;
 			}
@@ -47,11 +50,16 @@ public class RoverImpl implements Rover {
 
 	private void driveToNorthDirectionForDistance(double distance) {
 		double newX = this.getCurrentCoordinates().x();
-		double newy = this.getCurrentCoordinates().y()+1;
+		double newy = this.getCurrentCoordinates().y()+distance;
 		Coordinates coordinates = new Coordinates(newX, newy);
 		this.setCoordinates(coordinates);
 	}
-
+	private void driveToEastDirectionForDistance(double distance) {
+		double newX = this.getCurrentCoordinates().x()+distance;
+		double newy = this.getCurrentCoordinates().y();
+		Coordinates coordinates = new Coordinates(newX, newy);
+		this.setCoordinates(coordinates);
+	}
 	private void turnRoverToDirection(Direction direction) {
 		currentDirection = direction;
 	}

@@ -28,12 +28,44 @@ public class RoverTest {
 	}
 	
 	@Test
-	public void moveNorthCommand(){
+	public void moveNorthFor1DistanceCommand(){
 		//Given
 		Move move = new MoveForward();
 		move.setDirection(Direction.NORTH);
 		move.setDistance(1);
 		coordinates = new Coordinates(1, 2);
+		rover.setCoordinates(new Coordinates(1, 1));
+		
+		//when
+		rover.drive(move);
+		
+		//then
+		Assert.assertEquals(coordinates, rover.getCurrentCoordinates());
+	}
+	
+	@Test
+	public void moveNorthFor2DistanceCommand(){
+		//Given
+		Move move = new MoveForward();
+		move.setDirection(Direction.NORTH);
+		move.setDistance(2);
+		coordinates = new Coordinates(1, 3);
+		rover.setCoordinates(new Coordinates(1, 1));
+		
+		//when
+		rover.drive(move);
+		
+		//then
+		Assert.assertEquals(coordinates, rover.getCurrentCoordinates());
+	}
+	
+	@Test
+	public void moveEastFor2DistanceCommand(){
+		//Given
+		Move move = new MoveForward();
+		move.setDirection(Direction.EAST);
+		move.setDistance(2);
+		coordinates = new Coordinates(3, 1);
 		rover.setCoordinates(new Coordinates(1, 1));
 		
 		//when
