@@ -1,4 +1,4 @@
-package de.c0lect0r.codekatas.maventest;
+package de.c0lect0r.codekatas.maven;
 
 public class Main {
 
