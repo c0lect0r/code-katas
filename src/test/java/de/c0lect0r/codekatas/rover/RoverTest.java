@@ -36,8 +36,7 @@ public class RoverTest {
 		rover.setCoordinates(new Coordinates(1, 1));
 
 		// when
-		Navigator navigator = new NavigatorImpl(rover);
-		navigator.drive(moveCommand);
+		rover.drive(moveCommand);
 
 		// then
 		Assert.assertEquals(coordinates, rover.getCurrentCoordinates());
@@ -53,8 +52,7 @@ public class RoverTest {
 		rover.setCoordinates(new Coordinates(1, 1));
 
 		// when
-		Navigator navigator = new NavigatorImpl(rover);
-		navigator.drive(moveCommand);
+		rover.drive(moveCommand);
 
 		// then
 		Assert.assertEquals(coordinates, rover.getCurrentCoordinates());
@@ -70,8 +68,7 @@ public class RoverTest {
 		rover.setCoordinates(new Coordinates(1, 1));
 
 		// when
-		Navigator navigator = new NavigatorImpl(rover);
-		navigator.drive(moveCommand);
+		rover.drive(moveCommand);
 
 		// then
 		Assert.assertEquals(coordinates, rover.getCurrentCoordinates());

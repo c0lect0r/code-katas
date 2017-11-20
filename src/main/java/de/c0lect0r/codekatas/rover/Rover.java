@@ -9,5 +9,9 @@ public interface Rover {
 	Coordinates getCurrentCoordinates();
 
 	void setCoordinates(Coordinates coordinates);
+	
+	void setNavigator(Navigator navigator);
+	
+	void drive(MoveCommand moveCommand);
 
 }

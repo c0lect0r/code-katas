@@ -1,6 +1,9 @@
 package de.c0lect0r.codekatas.rover;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class NavigatorImpl implements Navigator {
+	@Autowired
 	private Rover rover;
 
 	public NavigatorImpl(Rover rover) {
