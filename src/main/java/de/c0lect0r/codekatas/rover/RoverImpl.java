@@ -2,18 +2,15 @@ package de.c0lect0r.codekatas.rover;
 
 public class RoverImpl implements Rover {
 
-	private Direction currentDirection;
-	private Coordinates coordinates;
-	private Move move;
-	
+	private Direction currentDirection = Direction.NORTH;
+	private Coordinates coordinates = new Coordinates(0, 0);
 
 	public Direction getCurrentDirection() {
 		return currentDirection;
 	}
 
-	public void setDirection(Direction direction) {
+	public void setCurrentDirection(Direction direction) {
 		this.currentDirection = direction;
-
 	}
 
 	public Coordinates getCurrentCoordinates() {
@@ -23,49 +20,6 @@ public class RoverImpl implements Rover {
 	public void setCoordinates(Coordinates coordinates) {
 		this.coordinates = coordinates;
 
-	}
-
-	public void drive(Move move) {
-		this.move = move;
-		
-		if(isTurnCommand(move.getDirection())){
-			turnRoverToDirection(move.getDirection());
-		}
-		
-		if(move.getDistance() > 0){
-			switch (currentDirection) {
-			case NORTH:
-				driveToNorthDirectionForDistance(move.getDistance());
-				break;
-			case WEST:
-				driveToNorthDirectionForDistance(move.getDistance());
-				break;
-			case EAST:
-				driveToEastDirectionForDistance(move.getDistance());
-			default:
-				break;
-			}
-		}
-	}
-
-	private void driveToNorthDirectionForDistance(double distance) {
-		double newX = this.getCurrentCoordinates().x();
-		double newy = this.getCurrentCoordinates().y()+distance;
-		Coordinates coordinates = new Coordinates(newX, newy);
-		this.setCoordinates(coordinates);
-	}
-	private void driveToEastDirectionForDistance(double distance) {
-		double newX = this.getCurrentCoordinates().x()+distance;
-		double newy = this.getCurrentCoordinates().y();
-		Coordinates coordinates = new Coordinates(newX, newy);
-		this.setCoordinates(coordinates);
-	}
-	private void turnRoverToDirection(Direction direction) {
-		currentDirection = direction;
-	}
-
-	private boolean isTurnCommand(Direction direction) {
-		return currentDirection != direction;
 	}
 
 }
