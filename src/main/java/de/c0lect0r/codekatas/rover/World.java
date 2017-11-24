@@ -7,5 +7,10 @@ public interface World {
 	void setMaxY(double i);
 	
 	public double getMaxX();
+	
 	public double getMaxY();
+
+	public void initiateWorld();
+
+	public Field getFieldXY(double d, double e);
 }

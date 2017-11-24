@@ -13,4 +13,9 @@ public class WorldTest {
 		Assert.assertEquals(10d, world.getMaxY(),0d);
 	}
 
+	@Test
+	public void isWorldCorrectlyInitiatedWith1Field(){
+		World world = MarsWorld.getInstance(1, 1);
+		world.getFieldXY(1,1);
+	}
 }

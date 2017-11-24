@@ -4,4 +4,6 @@ public interface Field {
 
 	public Coordinates getCoordinates();
 	public void setCoordinates(Coordinates coordinates);
+	
+	
 }
